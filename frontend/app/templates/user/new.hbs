@@ -1,0 +1,11 @@
+<h3>New User</h3>
+<form>
+    <div>
+        <label>Name:</label>
+      {{input type="text" value=model.name}}
+    </div>
+    <div>
+        <button {{action 'save'}}>Save</button>
+        <button {{action 'cancel'}}>Cancel</button>
+    </div>
+</form>

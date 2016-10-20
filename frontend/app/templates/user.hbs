@@ -1,0 +1,17 @@
+{{#link-to 'users'}}Back{{/link-to}}
+<p>
+    <label>Name: </label>{{model.name}}
+</p>
+<div>
+    <p>
+        <strong>Posts( {{model.posts.length}} ):</strong>
+    </p>
+  {{#each model.posts as |post|}}
+      <div>
+          <strong>{{post.title}}:</strong>
+          <p>{{post.body}}</p>
+          <button {{action 'deletePost' comment}}>Delete Post</button>
+      </div>
+  {{/each}}
+</div>
+<div>{{#link-to 'user.post.new'}}Add Post{{/link-to}}</div>

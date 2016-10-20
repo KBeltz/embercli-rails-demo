@@ -1,0 +1,11 @@
+<h4>Users</h4>
+<ul>
+  {{#each model as |user|}}
+      <li>
+          {{#link-to 'user' user}}User: {{user.name}}{{/link-to}}
+          <button {{action 'delete' user}}>Delete</button>
+      </li>
+  {{/each}}
+</ul>
+
+{{#link-to 'user.new'}}New User{{/link-to}}
