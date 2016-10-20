@@ -19,3 +19,20 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+.bowerrc
+.editorconfig
+.ember-cli
+.gitignore
+.jshintrc
+.travis.yml
+.watchmanconfig
+README.md
+app/
+bower.json
+config/
+ember-cli-build.js
+package.json
+public/
+testem.js
+tests/
+vendor/
