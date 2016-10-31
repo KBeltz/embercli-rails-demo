@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return {};
   },
   renderTemplate() {
-    this.render('post.comment.new', { into: 'application' });
+    this.render('user.post.new', { into: 'application' });
   },
   actions: {
     save() {
