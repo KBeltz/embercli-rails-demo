@@ -1,4 +1,21 @@
-<h4>Post</h4>
-
-{{model.title}}:
-{{model.body}}
+{{#link-to 'users'}}
+  <button>Back</button>
+{{/link-to}}
+<p>
+    <label>Title: </label>{{model.title}}
+</p>
+<p>
+    <label>Body: </label>{{model.body}}
+</p>
+<div>
+    <p>
+        <strong>Comments( {{model.comments.length}} ):</strong>
+    </p>
+  {{#each model.comments as |comment|}}
+      <div>
+          <p>{{comment.body}}</p>
+          <button {{action 'deleteComment' comment}}>Delete Post</button>
+      </div>
+  {{/each}}
+</div>
+<div>{{#link-to 'user.post.comment.new'}}Add Comment{{/link-to}}</div>

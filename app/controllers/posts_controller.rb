@@ -5,12 +5,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts, methods: :user_id
+    render json: @posts
   end
 
   # GET /posts/1
   def show
-    render json: @post, methods: :user_id
+    render json: @post
   end
 
   # POST /posts
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      render json: @post, methods: :user_id, status: :created, location: @post
+      render json: @post, status: :created, location: @post
     else
       render json: @post.errors, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      render json: @post, methods: :user_id
+      render json: @post
     else
       render json: @post.errors, status: :unprocessable_entity
     end
